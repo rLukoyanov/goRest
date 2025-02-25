@@ -1,7 +1,6 @@
 package routes
 
 import (
-	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -12,7 +11,6 @@ func signup(context *gin.Context) {
 	var user models.User
 
 	err := context.ShouldBindJSON(&user)
-	fmt.Println(user, err)
 
 	if err != nil {
 		context.JSON(http.StatusBadRequest, gin.H{
